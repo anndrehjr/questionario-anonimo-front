@@ -1,128 +1,174 @@
 <div align="center">
 
-<img src="public/favicon.svg" width="76" alt="Logo do Voto" />
+<img src="public/favicon.svg" width="88" alt="Logo do Voto: um check branco num quadrado azul" />
 
-# Voto
+# 🗳️ Voto
 
-**Questionários anônimos para uma sala de aula mais participativa.**
+### Pergunte. Escute. Sem ninguém precisar se identificar.
 
-O professor cria, compartilha por link ou QR Code e acompanha os resultados em tempo real.
-O aluno responde pelo celular, sem conta, sem nome e sem e-mail.
+Um jeito simples de a turma dizer **o que pensa de verdade**, sem vergonha, sem cadastro e sem medo de errar.
 
-[![React](https://img.shields.io/badge/React-18-149eca?logo=react&logoColor=white)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)](https://vite.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Deploy](https://img.shields.io/badge/deploy-Vercel-000?logo=vercel&logoColor=white)](https://vercel.com)
-[![Anônimo](https://img.shields.io/badge/respostas-an%C3%B4nimas-2864dc)](#-privacidade-e-anonimato)
-
-[**Ver o app**](https://questionario-anonimo-front.vercel.app/admin) · [Funcionalidades](#-funcionalidades) · [Como rodar](#-como-rodar) · [Arquitetura](#-arquitetura)
+[**👉 Abrir o Voto**](https://questionario-anonimo-front.vercel.app/admin)
 
 </div>
 
 ---
 
-## ✨ Funcionalidades
+## 🌱 A ideia
 
-| Para o professor | Para o aluno |
+Sabe quando o professor pergunta "alguém tem dúvida?" e ninguém levanta a mão, mas todo mundo tem?
+
+O Voto resolve isso. O professor faz as perguntas, a turma responde **pelo celular, em segundos**, e ninguém sabe quem respondeu o quê. Quando todo mundo termina, o professor vê o resultado em gráficos coloridos. 🎨
+
+> 💬 *"Quem não fala em voz alta costuma ter muito a dizer. O Voto dá a essa pessoa um lugar seguro para falar."*
+
+## 🧭 Como funciona (em 3 passos)
+
+| | Quem faz | O que acontece |
+|:-:|---|---|
+| **1️⃣** | 👩‍🏫 **Professor** | Escreve as perguntas e as alternativas (ou importa de um arquivo pronto). |
+| **2️⃣** | 🧑‍🎓 **Alunos** | Abrem o **link** ou leem o **QR Code** com o celular e respondem, uma pergunta por vez. |
+| **3️⃣** | 📊 **Todos** | O professor vê os resultados, projeta na sala e, se quiser, baixa uma planilha. |
+
+Pronto! Sem cadastro, sem senha para o aluno, sem papel. ✨
+
+## 🎁 O que dá para fazer
+
+**Para quem ensina** 👩‍🏫
+
+- ✏️ Criar e editar questionários do seu jeito
+- 📥 Importar perguntas de um arquivo, para não digitar tudo de novo
+- 🔗 Compartilhar por **link** ou **QR Code** (é só mostrar na tela!)
+- 📈 Ver os resultados em gráficos e porcentagens
+- 👥 Ver as respostas separadas por **idade** e por **homem/mulher** (se você quiser)
+- 🖥️ **Modo apresentação**: resultados em tela cheia para projetar na sala
+- 📄 Baixar tudo em uma planilha (CSV) que abre no Excel
+- 🌗 Escolher entre o tema **claro** e o **escuro**
+
+**Para quem responde** 🧑‍🎓
+
+- 📱 Tela feita para o celular, fácil de usar com o dedo
+- 👣 Uma pergunta por vez, com uma barrinha mostrando o quanto falta
+- 🙈 Sem dar nome, e-mail ou qualquer dado pessoal
+
+## 🔒 E o anonimato? É de verdade?
+
+Sim! Veja o que o Voto **faz** e o que ele **não faz**:
+
+| ✅ O Voto guarda | 🚫 O Voto NÃO guarda |
 |---|---|
-| 📊 Painel com indicadores, busca e filtros | 📱 Formulário pensado para o celular |
-| ✏️ Criar e editar questionários | 🔗 Acesso por link ou QR Code |
-| 📥 Importar questionário de um arquivo JSON | 🚫 Sem cadastro, nome ou e-mail |
-| 🔗 Compartilhar por link e QR Code | ✅ Uma pergunta por vez, com progresso |
-| 📈 Resultados com gráficos e percentuais | 🌗 Tema claro e escuro |
-| 👥 Quebra por **gênero e faixa etária** (opcional) | 🔒 Dados enviados sem identificação |
-| 🖥️ Modo apresentação para projetar na sala | |
-| 📄 Exportar resultados em CSV | |
+| Qual alternativa foi escolhida | Seu nome ou e-mail |
+| A hora cheia do envio (ex.: "14h") | O minuto exato em que você respondeu |
+| Se o professor pedir: a **faixa de idade** (ex.: "13 a 14 anos") e **homem/mulher** | Sua idade exata, seu IP ou qualquer "crachá" que ligue a resposta a você |
 
-Também: tema claro/escuro, tela de carregamento, ícone do app e um aviso de "salvo" com efeito (Sakuga toast).
+> ⚠️ **Um cuidado importante:** em uma turma bem pequena, "faixa de idade + gênero" pode deixar a pessoa fácil de adivinhar (se só existe uma menina de 15 anos na sala, por exemplo). Por isso, esse pedido é **opcional** e só aparece quando o professor ligar.
 
-## 🔒 Privacidade e anonimato
+## ❓ Perguntas que todo mundo faz
 
-- O formulário **não pede** nome, e-mail nem qualquer identificador; não há analytics, pixel nem serviço de terceiros.
-- No servidor, a resposta guarda só **pergunta, alternativa e a hora cheia** (sem IP, sem user-agent, sem ID de participante).
-- Quando o professor liga **"Pedir idade e gênero"**, o aluno informa os dois antes das perguntas, mas o servidor grava apenas a **faixa etária** (nunca a idade exata) e o gênero. Em turmas muito pequenas, faixa + gênero podem apontar para uma pessoa: use com isso em mente.
-- O navegador guarda apenas um marcador local de "já respondi" para evitar reenvio acidental. Ele não é enviado ao servidor.
+<details>
+<summary><b>O aluno precisa criar conta?</b></summary>
 
-## 🏗️ Arquitetura
+Não! Basta abrir o link. Só o professor entra com usuário e senha, para cuidar dos questionários.
+</details>
+
+<details>
+<summary><b>Posso responder duas vezes?</b></summary>
+
+O aparelho lembra que você já respondeu e avisa "Você já participou", para evitar reenvio sem querer. Esse lembrete fica só no seu celular; ninguém recebe essa informação.
+</details>
+
+<details>
+<summary><b>Como ligo a coleta de idade e gênero?</b></summary>
+
+No editor do questionário, marque a caixinha **"Pedir idade e gênero antes das perguntas"**. Se não marcar, nada disso é perguntado.
+</details>
+
+<details>
+<summary><b>Como importo um questionário pronto?</b></summary>
+
+No painel, clique em **Importar** e escolha um arquivo `.json`. Não sabe como é o arquivo? Clique em **Modelo**: ele baixa um exemplo para você só trocar os textos.
+</details>
+
+<details>
+<summary><b>Dá para ver os resultados no Excel?</b></summary>
+
+Dá! Na tela de resultados, clique em **Exportar CSV**. O arquivo abre no Excel ou no Google Planilhas.
+</details>
+
+## 🛠️ Para quem é da tecnologia
+
+<details>
+<summary><b>Clique aqui para ver a parte técnica</b></summary>
+
+<br/>
+
+**Como as peças se encaixam**
 
 ```mermaid
 flowchart LR
-    A[Aluno / Professor<br/>navegador] -->|HTTPS| V[Vercel<br/>este repositório]
-    V -->|"/api/* (rewrite)"| P[Proxy HTTPS<br/>na VPS]
-    P --> API[API Fastify + Prisma]
-    API --> DB[(PostgreSQL)]
+    A[📱 Navegador] -->|HTTPS| V[Vercel<br/>este projeto]
+    V -->|"/api/*"| P[Porta de entrada HTTPS]
+    P --> API[⚙️ API]
+    API --> DB[(🗄️ Banco de dados)]
 ```
 
-- **Front-end (este repositório):** SPA em React + Vite, publicada na Vercel.
-- **`/api/*`:** a Vercel repassa as chamadas para a API (rewrite em [`vercel.json`](vercel.json)). Para o navegador, tudo é o mesmo domínio, então o cookie de sessão (`HttpOnly`, `Secure`, `SameSite=Strict`) funciona.
-- **API e banco:** projeto separado (Fastify, Prisma e PostgreSQL), hospedado em uma VPS.
+- Este repositório é o **front-end** (a parte que a gente vê): React + Vite + TypeScript.
+- A **API** e o **banco** ficam em outro lugar (uma VPS). A Vercel repassa as chamadas de `/api/*` para lá (veja o [`vercel.json`](vercel.json)), então, para o navegador, tudo parece um site só.
 
-## 🚀 Como rodar
-
-Pré-requisito: Node.js 20+.
+**Rodar no seu computador** (precisa do Node.js 20+)
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev          # abre em http://localhost:5173
 ```
 
-Sem a API, rode em **modo demonstração** (dados fictícios no navegador):
+Quer só espiar, sem API? Use o **modo demonstração** (dados de mentirinha, só no navegador):
 
 ```bash
-VITE_USE_MOCK=true npm run dev      # login de demonstração: professor / sala123
+VITE_USE_MOCK=true npm run dev     # login: professor / sala123
 ```
 
-Com a API local, o Vite encaminha `/api` para `http://127.0.0.1:3000`.
-
-| Comando | O que faz |
+| Comando | Para quê |
 |---|---|
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm test` | Testes (Vitest) |
-| `npm run build` | Checagem de tipos + build de produção em `dist/` |
-| `npm run preview` | Serve o build localmente |
+| `npm run dev` | Abrir o app para desenvolver |
+| `npm test` | Rodar os testes |
+| `npm run build` | Gerar a versão final (pasta `dist/`) |
 
-## ⚙️ Variáveis de ambiente
+**Variáveis** (veja [`.env.example`](.env.example)): `VITE_USE_MOCK` (use `false` em produção) e `VITE_API_URL` (opcional, só se a API estiver em outro endereço). Elas são públicas: nunca coloque segredos nelas.
 
-Veja [`.env.example`](.env.example).
-
-| Variável | Uso |
-|---|---|
-| `VITE_USE_MOCK` | `false` em produção (sempre usa a API). `true` ativa o modo demonstração. |
-| `VITE_API_URL` | Opcional: só se a API estiver em outro domínio. |
-
-> Variáveis `VITE_*` são públicas. Nunca coloque segredos nelas.
-
-## 📥 Importar um questionário
-
-No painel, **Importar** aceita um arquivo JSON (o botão **Modelo** baixa um exemplo):
+**Formato do arquivo de importação**
 
 ```json
 {
-  "titulo": "Título do questionário",
-  "descricao": "Texto opcional de introdução",
+  "titulo": "Como foi a aula de hoje?",
+  "descricao": "Leva 1 minutinho!",
   "coletaPerfil": false,
   "perguntas": [
-    { "enunciado": "Primeira pergunta?", "opcoes": ["Opção A", "Opção B", "Opção C"] }
+    { "enunciado": "O que você achou?", "opcoes": ["Gostei muito", "Mais ou menos", "Não gostei"] }
   ]
 }
 ```
 
-## ☁️ Publicação (Vercel)
+**Publicar:** cada `git push` na branch `main` publica sozinho na Vercel.
 
-Cada `git push` na `main` publica automaticamente. O [`vercel.json`](vercel.json) define o build (`VITE_USE_MOCK=false`), o fallback da SPA, os cabeçalhos de segurança e o rewrite de `/api/*`.
-
-## 🧱 Estrutura
+**Pastas principais**
 
 ```
-src/
-├─ pages/        telas (painel, editor, resultados, apresentação, quiz do aluno)
-├─ components/   layout, diálogos, botão de tema
-├─ lib/          API, importação, CSV, percentuais, tema
-└─ types/        tipos compartilhados
-public/          ícone e toast.js (Sakuga toast, sem alterações)
+src/pages/        as telas (painel, editor, resultados, quiz do aluno...)
+src/components/   peças reutilizáveis (menu, botão de tema...)
+src/lib/          a "cozinha": API, importação, CSV, tema
+public/           ícone e o efeito do aviso "salvo"
 ```
 
-## 🙏 Créditos
+</details>
 
-- Aviso de "salvo" com efeito: [Sakuga VFX](https://sakuga-vfx.vercel.app).
-- Fonte [Inter](https://rsms.me/inter/), ícones [Lucide](https://lucide.dev), gráficos [Recharts](https://recharts.org).
+## 💙 Agradecimentos
+
+- O aviso animado de "salvo" é do [Sakuga VFX](https://sakuga-vfx.vercel.app) ✨
+- Letras [Inter](https://rsms.me/inter/), ícones [Lucide](https://lucide.dev) e gráficos [Recharts](https://recharts.org)
+
+<div align="center">
+
+Feito com carinho para salas de aula mais participativas. 🌈
+
+</div>
