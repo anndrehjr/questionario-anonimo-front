@@ -1,0 +1,3 @@
+
+import { Check, Heart, ShieldCheck } from 'lucide-react';
+export default function ThanksPage() { return <section className="thanks-shell"><div className="thanks-check"><Check size={28}/></div><span className="overline">RESPOSTA ENVIADA</span><h1>Obrigado por<br/><em>compartilhar sua ideia.</em></h1><p>Sua participação ajuda a criar uma sala onde todo mundo pode aprender melhor — sem precisar se identificar.</p><div className="thanks-privacy"><ShieldCheck size={17}/><span>Sua resposta foi recebida anonimamente.</span></div><div className="thanks-hearts"><Heart size={13}/> Aprender junto começa por ouvir.</div></section>; }

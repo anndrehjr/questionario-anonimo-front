@@ -1,0 +1,9 @@
+export type Opcao = { id: number; texto: string };
+export type Pergunta = { id: number; enunciado: string; ordem: number; opcoes: Opcao[] };
+export type Quiz = { id: number; slug: string; titulo: string; descricao?: string; ativo: boolean; coletaPerfil?: boolean; perguntas: Pergunta[]; participacoes?: number; criadoEm?: string };
+export type Genero = 'homem' | 'mulher';
+export type Perfil = { idade: number; genero: Genero };
+export type ResultadoOpcao = { opcaoId: number; texto: string; votos: number; porGenero?: Partial<Record<Genero, number>>; porFaixa?: Record<string, number> };
+export type ResultadoPergunta = { perguntaId: number; enunciado: string; totalVotos: number; opcoes: ResultadoOpcao[] };
+export type ResultadoQuiz = { quizId: number; titulo: string; totalParticipacoes: number; coletaPerfil?: boolean; faixas?: { chave: string; rotulo: string }[]; perguntas: ResultadoPergunta[] };
+export type Resposta = { perguntaId: number; opcaoId: number };

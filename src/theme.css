@@ -1,0 +1,56 @@
+/* Minimalismo, tema claro/escuro e login em vidro. Carregado depois de styles.css e theme-dark.css. */
+:root[data-theme=dark]{color-scheme:dark;color:#d5dbe3;background:#121417;--ink:#e8ecf1;--muted:#8d97a3;--line:#262b32;--paper:#171a1f;--warm:#14171b}
+:root[data-theme=dark] body{background:#121417}
+:root[data-theme=dark] input,:root[data-theme=dark] textarea,:root[data-theme=dark] select{color:#e8ecf1;background:#1a1e24;border-color:#2c323a}
+:root[data-theme=dark] ::placeholder{color:#6b7480}
+
+/* Botão de tema */
+.theme-toggle{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);transition:color .15s,border-color .15s}
+.theme-toggle:hover{color:var(--ink);border-color:var(--muted)}
+.theme-toggle:focus-visible,.glass-card button:focus-visible,.glass-card input:focus-visible,.button:focus-visible{outline:2px solid #6ea0ff;outline-offset:2px}
+
+/* Minimalismo no painel */
+.privacy-note,.avatar,.sidebar-label,.admin-tag,.site-footer,.public-header .privacy-pill{display:none!important}
+.admin-topbar{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.section-header .eyebrow{display:none}
+
+/* Login: cartão de vidro translúcido sobre fundo desfocado */
+.glass-page{position:fixed;inset:0;display:grid;place-items:center;padding:20px;overflow:hidden;background:#0d1220}
+.glass-page:before,.glass-page:after,.glass-blob{content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:.75}
+.glass-page:before{width:46vmax;height:46vmax;left:-12vmax;top:-14vmax;background:#2f5fe0}
+.glass-page:after{width:40vmax;height:40vmax;right:-10vmax;bottom:-12vmax;background:#1fa37a}
+.glass-blob{width:28vmax;height:28vmax;left:55%;top:8%;background:#7b4fe0;opacity:.45}
+.glass-card{position:relative;z-index:1;width:min(100%,360px);padding:34px 30px 28px;border-radius:20px;color:#f2f5fa;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);box-shadow:0 20px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%)}
+.glass-card h1{margin:0 0 4px;font:700 22px Inter,sans-serif;letter-spacing:-.5px}
+.glass-card p{margin:0 0 22px;font-size:13px;color:rgba(242,245,250,.7)}
+.glass-card label{display:block;margin:14px 0 6px;font-size:12px;color:rgba(242,245,250,.8)}
+.glass-card input{width:100%;height:42px;padding:0 13px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:14px}
+.glass-card input::placeholder{color:rgba(255,255,255,.45)}
+.glass-card .pw{position:relative}.glass-card .pw input{padding-right:42px}
+.glass-card .pw button{position:absolute;right:4px;top:4px;width:34px;height:34px;border:0;background:transparent;color:rgba(255,255,255,.75);border-radius:8px}
+.glass-card .glass-submit{width:100%;height:44px;margin-top:22px;border:0;border-radius:10px;font:600 14px Inter,sans-serif;color:#0d1220;background:#fff;transition:transform .15s,opacity .15s}
+.glass-card .glass-submit:hover:not(:disabled){transform:translateY(-1px)}
+.glass-corner{position:absolute;top:16px;right:16px;z-index:2}
+.glass-corner .theme-toggle{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
+@supports not (backdrop-filter:blur(1px)){.glass-card{background:rgba(20,26,40,.85)}}
+
+/* Importação */
+.import-input{display:none}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap}
+.import-hint{margin:10px 0 0;font-size:12px;color:var(--muted)}
+.import-hint button{border:0;background:none;padding:0;color:#3471d9;text-decoration:underline;font-size:12px}
+
+/* Perfil (idade e gênero) */
+.perfil-toggle{display:flex;gap:11px;align-items:flex-start;margin-top:18px;padding:13px 14px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.perfil-toggle input{margin-top:3px;width:17px;height:17px;accent-color:#2864dc}
+.perfil-toggle span{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--ink)}
+.perfil-toggle small{font-size:11px;line-height:1.5;color:var(--muted)}
+.perfil-idade{width:100%;max-width:160px;font-size:18px}
+.perfil-titulo{margin-top:22px}
+.perfil-detalhes{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.perfil-detalhes summary{cursor:pointer;font-size:12px;font-weight:600;color:#3471d9}
+.perfil-tabela-wrap{overflow-x:auto;margin-top:10px}
+.perfil-tabela{width:100%;border-collapse:collapse;font-size:12px;color:var(--ink)}
+.perfil-tabela th,.perfil-tabela td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.perfil-tabela th:first-child,.perfil-tabela td:first-child{text-align:left;white-space:normal;min-width:130px}
+.perfil-tabela th{font-weight:600;color:var(--muted)}
