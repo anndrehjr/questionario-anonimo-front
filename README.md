@@ -6,69 +6,80 @@
 
 ### Pergunte. Escute. Sem ninguém precisar se identificar.
 
-Um jeito simples de a turma dizer **o que pensa de verdade**, sem vergonha, sem cadastro e sem medo de errar.
+Questionários **anônimos** para sala de aula: o professor cria as perguntas, a turma responde pelo celular, por link ou QR Code, e os resultados aparecem em gráficos.
 
-[**👉 Abrir o Voto**](https://questionario-anonimo-front.vercel.app/admin)
+![Resultados de um questionário (dados fictícios)](docs/screenshots/04-resultados.png)
 
 </div>
+
+> **O Voto não é uma urna eletrônica.** Ele serve para coletar opiniões e feedback da turma de forma anônima. Não há eleição, candidatos nem apuração oficial. As imagens deste README mostram um questionário fictício, sem nenhum dado real.
 
 ---
 
 ## 🌱 A ideia
 
-Sabe quando o professor pergunta "alguém tem dúvida?" e ninguém levanta a mão, mas todo mundo tem?
+Quando o professor pergunta "alguém tem dúvida?", ninguém levanta a mão, mas todo mundo tem. O Voto resolve isso: o professor publica um questionário, a turma responde **sem cadastro e sem dar o nome**, e o professor vê o resultado consolidado.
 
-O Voto resolve isso. O professor faz as perguntas, a turma responde **pelo celular, em segundos**, e ninguém sabe quem respondeu o quê. Quando todo mundo termina, o professor vê o resultado em gráficos coloridos. 🎨
-
-> 💬 *"Quem não fala em voz alta costuma ter muito a dizer. O Voto dá a essa pessoa um lugar seguro para falar."*
-
-## 🧭 Como funciona (em 3 passos)
+## 🧭 Como funciona
 
 | | Quem faz | O que acontece |
 |:-:|---|---|
-| **1️⃣** | 👩‍🏫 **Professor** | Escreve as perguntas e as alternativas (ou importa de um arquivo pronto). |
-| **2️⃣** | 🧑‍🎓 **Alunos** | Abrem o **link** ou leem o **QR Code** com o celular e respondem, uma pergunta por vez. |
-| **3️⃣** | 📊 **Todos** | O professor vê os resultados, projeta na sala e, se quiser, baixa uma planilha. |
+| **1** | 👩‍🏫 **Professor** | Entra no painel, escreve as perguntas e as alternativas (ou importa de um arquivo `.json`). |
+| **2** | 🧑‍🎓 **Alunos** | Abrem o **link** ou leem o **QR Code** com o celular e respondem, uma pergunta por vez. |
+| **3** | 📊 **Todos** | O professor vê os resultados em gráficos, projeta em **modo apresentação** e, se quiser, baixa um **CSV**. |
 
-Pronto! Sem cadastro, sem senha para o aluno, sem papel. ✨
+## 📸 Telas
+
+**Painel do professor.** Visão geral com questionários, participações e status da coleta.
+
+![Painel do professor](docs/screenshots/01-painel.png)
+
+**Editor.** Título, introdução, link compartilhável, pergunta de idade e gênero (opcional) e as perguntas.
+
+![Editor de questionário](docs/screenshots/02-editor.png)
+
+**Tela do aluno (celular).** Uma pergunta por vez, com barra de progresso e aviso de anonimato.
+
+<img src="docs/screenshots/03-aluno-celular.png" width="300" alt="Tela do aluno no celular, com uma alternativa selecionada" />
+
+**Tema claro.** O painel tem tema claro e escuro.
+
+![Painel no tema claro](docs/screenshots/05-painel-tema-claro.png)
 
 ## 🎁 O que dá para fazer
 
-**Para quem ensina** 👩‍🏫
+**Para quem ensina**
 
-- ✏️ Criar e editar questionários do seu jeito
-- 📥 Importar perguntas de um arquivo, para não digitar tudo de novo
-- 🔗 Compartilhar por **link** ou **QR Code** (é só mostrar na tela!)
-- 📈 Ver os resultados em gráficos e porcentagens
-- 👥 Ver as respostas separadas por **idade** e por **homem/mulher** (se você quiser)
-- 🖥️ **Modo apresentação**: resultados em tela cheia para projetar na sala
-- 📄 Baixar tudo em uma planilha (CSV) que abre no Excel
-- 🌗 Escolher entre o tema **claro** e o **escuro**
+- Criar, editar, ativar/encerrar e excluir questionários
+- Importar perguntas de um arquivo `.json` (há um **modelo** para baixar)
+- Compartilhar por **link** ou **QR Code**
+- Ver os resultados por pergunta: total de respostas, porcentagens, "mais escolhida" e gráfico
+- Ver as respostas por **faixa de idade** e por **homem/mulher** (opcional, só se você ligar)
+- **Modo apresentação**: tela cheia com QR Code e resultados, navegação pelo teclado
+- Exportar tudo em **CSV**
+- Escolher o tema **claro** ou **escuro**
 
-**Para quem responde** 🧑‍🎓
+**Para quem responde**
 
-- 📱 Tela feita para o celular, fácil de usar com o dedo
-- 👣 Uma pergunta por vez, com uma barrinha mostrando o quanto falta
-- 🙈 Sem dar nome, e-mail ou qualquer dado pessoal
+- Tela feita para o celular, uma pergunta por vez
+- Sem nome, e-mail ou qualquer dado pessoal
 
 ## 🔒 E o anonimato? É de verdade?
-
-Sim! Veja o que o Voto **faz** e o que ele **não faz**:
 
 | ✅ O Voto guarda | 🚫 O Voto NÃO guarda |
 |---|---|
 | Qual alternativa foi escolhida | Seu nome ou e-mail |
 | A hora cheia do envio (ex.: "14h") | O minuto exato em que você respondeu |
-| Se o professor pedir: a **faixa de idade** (ex.: "13 a 14 anos") e **homem/mulher** | Sua idade exata, seu IP ou qualquer "crachá" que ligue a resposta a você |
+| Se o professor pedir: a **faixa de idade** (ex.: "13 a 14 anos") e **homem/mulher** | Sua idade exata ou qualquer "crachá" que ligue a resposta a você |
 
-> ⚠️ **Um cuidado importante:** em uma turma bem pequena, "faixa de idade + gênero" pode deixar a pessoa fácil de adivinhar (se só existe uma menina de 15 anos na sala, por exemplo). Por isso, esse pedido é **opcional** e só aparece quando o professor ligar.
+> ⚠️ Em uma turma bem pequena, "faixa de idade + gênero" pode deixar a pessoa fácil de adivinhar. Por isso esse pedido é **opcional** e só aparece quando o professor liga.
 
 ## ❓ Perguntas que todo mundo faz
 
 <details>
 <summary><b>O aluno precisa criar conta?</b></summary>
 
-Não! Basta abrir o link. Só o professor entra com usuário e senha, para cuidar dos questionários.
+Não. Basta abrir o link. Só o professor entra com usuário e senha, para cuidar dos questionários.
 </details>
 
 <details>
@@ -80,61 +91,62 @@ O aparelho lembra que você já respondeu e avisa "Você já participou", para e
 <details>
 <summary><b>Como ligo a coleta de idade e gênero?</b></summary>
 
-No editor do questionário, marque a caixinha **"Pedir idade e gênero antes das perguntas"**. Se não marcar, nada disso é perguntado.
+No editor do questionário, marque **"Pedir idade e gênero antes das perguntas"**. Se não marcar, nada disso é perguntado.
 </details>
 
 <details>
 <summary><b>Como importo um questionário pronto?</b></summary>
 
-No painel, clique em **Importar** e escolha um arquivo `.json`. Não sabe como é o arquivo? Clique em **Modelo**: ele baixa um exemplo para você só trocar os textos.
+No painel, clique em **Importar JSON** e escolha um arquivo `.json`. Clique em **Modelo JSON** para baixar um exemplo e trocar só os textos.
 </details>
 
 <details>
 <summary><b>Dá para ver os resultados no Excel?</b></summary>
 
-Dá! Na tela de resultados, clique em **Exportar CSV**. O arquivo abre no Excel ou no Google Planilhas.
+Dá. Na tela de resultados, clique em **Exportar CSV**. O arquivo abre no Excel ou no Google Planilhas.
 </details>
 
 ## 🛠️ Para quem é da tecnologia
-
-<details>
-<summary><b>Clique aqui para ver a parte técnica</b></summary>
-
-<br/>
 
 **Como as peças se encaixam**
 
 ```mermaid
 flowchart LR
     A[📱 Navegador] -->|HTTPS| V[Vercel<br/>este projeto]
-    V -->|"/api/*"| P[Porta de entrada HTTPS]
-    P --> API[⚙️ API]
+    V -->|"/api/*"| API[⚙️ API do Voto]
     API --> DB[(🗄️ Banco de dados)]
 ```
 
-- Este repositório é o **front-end** (a parte que a gente vê): React + Vite + TypeScript.
-- A **API** e o **banco** ficam em outro lugar (uma VPS). A Vercel repassa as chamadas de `/api/*` para lá (veja o [`vercel.json`](vercel.json)), então, para o navegador, tudo parece um site só.
+- Este repositório é o **front-end**: React 18 + Vite + TypeScript + Tailwind CSS 4.
+- A **API** (Node + Fastify + Prisma + PostgreSQL) e o banco rodam em uma VPS e **não estão neste repositório**. A Vercel repassa as chamadas `/api/*` para lá (veja o [`vercel.json`](vercel.json)).
+- Principais bibliotecas: React Router, TanStack Query, React Hook Form + Zod, Recharts, qrcode.react, Sonner e Lucide.
 
-**Rodar no seu computador** (precisa do Node.js 20+)
+### Rodar no seu computador
+
+Requisitos: Node.js 20 ou mais novo.
 
 ```bash
 npm install
-npm run dev          # abre em http://localhost:5173
+npm run dev          # http://localhost:5173
 ```
 
-Quer só espiar, sem API? Use o **modo demonstração** (dados de mentirinha, só no navegador):
+Sem nenhuma variável de ambiente, o app abre em **modo demonstração**: os dados são de mentirinha e ficam só no navegador. Entre em `/admin/login` com **usuário `professor` e senha `sala123`**. O questionário de exemplo, "O que faz uma boa aula?", tem 42 respostas fictícias e é o mesmo das capturas de tela.
+
+Para usar a API de verdade, desligue o modo demonstração e aponte para a API (por padrão `http://127.0.0.1:3000`):
 
 ```bash
-VITE_USE_MOCK=true npm run dev     # login: professor / sala123
+VITE_USE_MOCK=false npm run dev                                  # API em http://127.0.0.1:3000
+VITE_USE_MOCK=false VITE_PROXY_TARGET=http://127.0.0.1:4000 npm run dev   # API em outro endereço
 ```
 
 | Comando | Para quê |
 |---|---|
-| `npm run dev` | Abrir o app para desenvolver |
-| `npm test` | Rodar os testes |
-| `npm run build` | Gerar a versão final (pasta `dist/`) |
+| `npm run dev` | Abrir o app para desenvolver (porta 5173) |
+| `npm test` | Rodar os testes (Vitest; 10 testes) |
+| `npm run build` | Conferir os tipos e gerar `dist/` |
+| `npm run preview` | Servir o build localmente |
 
-**Variáveis** (veja [`.env.example`](.env.example)): `VITE_USE_MOCK` (use `false` em produção) e `VITE_API_URL` (opcional, só se a API estiver em outro endereço). Elas são públicas: nunca coloque segredos nelas.
+**Variáveis** (veja [`.env.example`](.env.example)): `VITE_USE_MOCK` (`false` em produção), `VITE_API_URL` (opcional, só se a API estiver em outro domínio) e `VITE_PROXY_TARGET` (destino do proxy `/api` no `npm run dev`). Elas são públicas: nunca coloque segredos nelas.
 
 **Formato do arquivo de importação**
 
@@ -149,26 +161,19 @@ VITE_USE_MOCK=true npm run dev     # login: professor / sala123
 }
 ```
 
-**Publicar:** cada `git push` na branch `main` publica sozinho na Vercel.
+**Publicar:** cada `git push` na branch `main` publica na Vercel.
 
 **Pastas principais**
 
 ```
-src/pages/        as telas (painel, editor, resultados, quiz do aluno...)
+src/pages/        as telas (painel, editor, resultados, apresentação, questionário do aluno)
 src/components/   peças reutilizáveis (menu, botão de tema...)
-src/lib/          a "cozinha": API, importação, CSV, tema
+src/lib/          API, importação, CSV, tema
+docs/screenshots/ capturas deste README (questionário fictício)
 public/           ícone e o efeito do aviso "salvo"
 ```
-
-</details>
 
 ## 💙 Agradecimentos
 
 - O aviso animado de "salvo" é do [Sakuga VFX](https://sakuga-vfx.vercel.app) ✨
 - Letras [Inter](https://rsms.me/inter/), ícones [Lucide](https://lucide.dev) e gráficos [Recharts](https://recharts.org)
-
-<div align="center">
-
-Feito com carinho para salas de aula mais participativas. 🌈
-
-</div>
